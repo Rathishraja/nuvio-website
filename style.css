@@ -1055,102 +1055,457 @@ nav {
 
 
 /* ================================================================
-   TEAM SECTION
+   NUVIO — FOUNDER SECTION
+   Paste this block anywhere inside style.css
 ================================================================ */
 
-#team {
+/* ─── KEYFRAMES (unique to founder section) ─── */
+@keyframes founder-float-a {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-14px) rotate(1deg); }
+}
+@keyframes founder-float-b {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(10px) rotate(-1deg); }
+}
+@keyframes founder-glow-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50%       { opacity: 0.85; transform: scale(1.06); }
+}
+@keyframes founder-dot-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+@keyframes founder-card-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+
+/* ─── SECTION WRAPPER ─── */
+#founder {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── ORB GLOWS ─── */
+.founder-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(90px);
+  z-index: 0;
+}
+.founder-orb-1 {
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.18) 0%, transparent 70%);
+  top: -80px;
+  left: -160px;
+  animation: founder-glow-pulse 7s ease-in-out infinite;
+}
+.founder-orb-2 {
+  width: 440px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, transparent 70%);
+  bottom: -60px;
+  right: -100px;
+  animation: founder-glow-pulse 9s ease-in-out infinite reverse;
+}
+
+/* ─── HEADER ─── */
+.founder-header {
+  text-align: center;
+  margin-bottom: 64px;
+  position: relative;
+  z-index: 1;
+}
+.founder-header .section-label {
+  justify-content: center;
+}
+.founder-header .section-title {
+  margin-bottom: 0;
+}
+.founder-gradient-text {
+  background: linear-gradient(135deg, #A855F7 0%, #7C3AED 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── MAIN GRID ─── */
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── IMAGE COLUMN ─── */
+.founder-image-col {
   position: relative;
 }
 
-.team-header {
-  text-align: center;
-  margin-bottom: 56px;
-}
-
-.team-header .section-label {
-  justify-content: center;
-}
-
-.accent-text {
-  color: #A855F7;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
-  max-width: 560px;
+.founder-image-frame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
   margin: 0 auto;
+  /* subtle border glow */
+  border-radius: 28px;
+  overflow: visible;
 }
 
-.team-card {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 28px 24px;
-  text-align: center;
-  transition: border-color 0.3s, transform 0.3s;
+/* radial glow behind the photo */
+.founder-image-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(
+    ellipse 80% 70% at 50% 60%,
+    rgba(124, 58, 237, 0.28) 0%,
+    rgba(168, 85, 247, 0.10) 45%,
+    transparent 75%
+  );
+  border-radius: 40px;
+  z-index: 0;
+  animation: founder-glow-pulse 6s ease-in-out infinite;
+  pointer-events: none;
 }
 
-.team-card:hover {
-  border-color: rgba(124, 58, 237, 0.25);
-  transform: translateY(-3px);
+/* the photo itself */
+.founder-photo {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-height: 560px;
+  object-fit: contain;
+  object-position: top center;
+  filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.7));
+  animation: founder-float-a 8s ease-in-out infinite;
 }
 
-.team-avatar {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  margin: 0 auto 16px;
+/* gradient fade at bottom so photo blends into bg */
+.founder-image-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, var(--bg) 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ─── FLOATING CREDIBILITY CARDS ─── */
+.founder-float-card {
+  position: absolute;
+  background: rgba(22, 22, 22, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 4;
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(124, 58, 237, 0.12);
+  white-space: nowrap;
+}
+
+.founder-fc-top {
+  top: 6%;
+  right: -32px;
+  animation: founder-card-float 5s ease-in-out infinite;
+}
+.founder-fc-bottom {
+  bottom: 16%;
+  left: -32px;
+  animation: founder-card-float 6s ease-in-out infinite reverse;
+}
+
+.founder-fc-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(124, 58, 237, 0.18);
+  color: #A855F7;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-display);
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--white);
-  position: relative;
+  flex-shrink: 0;
+}
+.founder-fc-icon--green {
+  background: rgba(34, 197, 94, 0.14);
+  color: #4ade80;
 }
 
-.team-avatar::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: 50%;
-  padding: 1px;
-  background: linear-gradient(135deg, var(--accent), var(--glow));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
-
-.av1 { background: linear-gradient(135deg, #1e1b4b, #312e81); }
-.av2 { background: linear-gradient(135deg, #14532d, #166534); }
-.av3 { background: linear-gradient(135deg, #450a0a, #7f1d1d); }
-.av4 { background: linear-gradient(135deg, #1e3a5f, #1e40af); }
-
-.team-name {
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 4px;
-  letter-spacing: -0.02em;
-}
-
-.team-role {
-  font-size: 13px;
-  color: var(--accent);
-  font-weight: 500;
-  margin-bottom: 8px;
-}
-
-.team-bio {
-  font-size: 13px;
+.founder-fc-label {
+  font-size: 10px;
   color: var(--secondary);
-  line-height: 1.55;
-  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  line-height: 1;
+  display: block;
 }
+.founder-fc-value {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  display: block;
+  margin-top: 2px;
+}
+.founder-fc-value--live {
+  color: #4ade80;
+}
+
+/* stack label + value vertically */
+.founder-float-card .founder-fc-label,
+.founder-float-card .founder-fc-value {
+  display: block;
+}
+.founder-float-card > span:not(.founder-fc-icon) {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* ─── CONTENT COLUMN ─── */
+.founder-content-col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.founder-eyebrow {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--secondary);
+  margin-bottom: 6px;
+}
+
+.founder-name {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 4.5vw, 58px);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.04em;
+  margin-bottom: 14px;
+  color: var(--white);
+}
+
+.founder-title-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(
+    135deg,
+    rgba(124, 58, 237, 0.16),
+    rgba(168, 85, 247, 0.08)
+  );
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  border-radius: 999px;
+  padding: 10px 18px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.founder-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.6);
+  animation: founder-dot-blink 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+/* ─── BIO ─── */
+.founder-bio {
+  font-size: 16px;
+  color: var(--secondary);
+  line-height: 1.75;
+  font-weight: 300;
+  max-width: 520px;
+}
+.founder-bio strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
+/* ─── CREDIBILITY PILLS ─── */
+.founder-cred-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.founder-cred-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(124, 58, 237, 0.05)
+  );
+  border: 1px solid rgba(168, 85, 247, 0.14);
+  border-radius: 14px;
+  padding: 11px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+.founder-cred-pill:hover {
+  transform: translateY(-4px);
+  border-color: rgba(168, 85, 247, 0.28);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(124, 58, 237, 0.09)
+  );
+  box-shadow:
+    0 16px 34px rgba(0, 0, 0, 0.3),
+    0 0 24px rgba(168, 85, 247, 0.08);
+}
+.founder-cred-icon {
+  width: 14px;
+  height: 14px;
+  color: #A855F7;
+  flex-shrink: 0;
+}
+
+/* ─── SKILL CHIPS ─── */
+.founder-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.founder-skill-chip {
+  font-size: 12px;
+  font-weight: 500;
+  color: #c084fc;
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 6px;
+  padding: 5px 12px;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, border-color 0.2s;
+}
+.founder-skill-chip:hover {
+  background: rgba(124, 58, 237, 0.18);
+  border-color: rgba(124, 58, 237, 0.4);
+}
+
+/* ─── CTA ROW ─── */
+.founder-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+/* magnetic effect handled in JS — these are the targets */
+.founder-btn-magnetic {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.founder-btn-magnetic:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 18px 40px rgba(124, 58, 237, 0.22);
+}
+
+/* ─── SOCIALS ─── */
+.founder-socials {
+  display: flex;
+  gap: 14px;
+  margin-top: 1.4rem;
+}
+
+.founder-social-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-color);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.35s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+.founder-social-icon:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .founder-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .founder-image-col {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .founder-fc-top  { right: -8px; }
+  .founder-fc-bottom { left: -8px; }
+}
+
+@media (max-width: 600px) {
+  .founder-header {
+    margin-bottom: 40px;
+  }
+  .founder-name {
+    font-size: clamp(34px, 9vw, 48px);
+  }
+  .founder-fc-top,
+  .founder-fc-bottom {
+    display: none; /* hide floaters on very small screens */
+  }
+  .founder-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .founder-cta .btn-primary,
+  .founder-cta .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 
 /* ================================================================
    FOOTER
