@@ -376,6 +376,7 @@ nav {
   background: var(--white);
 }
 
+
 /* Mobile nav overlay */
 .nav-links.mobile-open {
   display: flex !important;
@@ -384,47 +385,29 @@ nav {
   top: var(--nav-height);
   left: 0;
   right: 0;
-  bottom: 0;
-  background: rgba(10, 10, 10, 0.97);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  padding: 32px 24px;
-  gap: 8px;
+  background: rgba(10, 10, 10, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 16px 20px 20px;
+  gap: 4px;
   border-bottom: 1px solid var(--border);
   z-index: 999;
-  animation: nav-slide-down 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
-  overflow-y: auto;
-}
-
-.nav-links.mobile-open li {
-  opacity: 0;
-  transform: translateY(12px);
-  animation: nav-item-fade 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-.nav-links.mobile-open li:nth-child(1) { animation-delay: 0.05s; }
-.nav-links.mobile-open li:nth-child(2) { animation-delay: 0.09s; }
-.nav-links.mobile-open li:nth-child(3) { animation-delay: 0.13s; }
-.nav-links.mobile-open li:nth-child(4) { animation-delay: 0.17s; }
-.nav-links.mobile-open li:nth-child(5) { animation-delay: 0.21s; }
-
-@keyframes nav-slide-down {
-  from { opacity: 0; transform: translateY(-8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes nav-item-fade {
-  to { opacity: 1; transform: translateY(0); }
 }
 
 .nav-links.mobile-open a {
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
   color: var(--secondary);
-  padding: 14px 0;
+  padding: 12px 0;
   border-bottom: 1px solid var(--border);
   display: block;
   width: 100%;
   transition: color 0.2s ease;
+  letter-spacing: 0.01em;
+}
+
+.nav-links.mobile-open li:last-child a {
+  border-bottom: none;
 }
 
 .nav-links.mobile-open a:hover {
@@ -434,15 +417,15 @@ nav {
 .nav-links.mobile-open .nav-cta {
   background: var(--accent) !important;
   color: var(--white) !important;
-  border-radius: 10px !important;
-  padding: 14px 20px !important;
+  border-radius: 8px !important;
+  padding: 10px 20px !important;
   text-align: center !important;
   justify-content: center !important;
-  font-size: 15px !important;
-  margin-top: 12px !important;
+  font-size: 13px !important;
+  margin-top: 8px !important;
   border-bottom: none !important;
+  display: flex !important;
 }
-
 
 /* ================================================================
    HERO SECTION
