@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="NUVIO — A multi-disciplinary community for students, builders, creatives, and ambitious learners to connect, grow, and build together." />
   <meta name="theme-color" content="#0A0A0A" />
 
@@ -14,9 +14,12 @@
 
   <title>NUVIO — Where curious minds connect.</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
-  <!-- Google Fonts -->
+
+  <!-- Preconnect for faster font loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Google Fonts — display=swap prevents FOIT -->
   <link
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
     rel="stylesheet"
@@ -31,12 +34,12 @@
   <!-- ============================================================
        NAVIGATION
   ============================================================ -->
-  <nav>
-    <a href="#" class="nav-logo">
-      <img src="assets/nuvio-navbar.png" alt="NUVIO">
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo" aria-label="NUVIO — Home">
+      <img src="assets/nuvio-navbar.png" alt="NUVIO" width="120" height="38">
     </a>
 
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#why">Why Join</a></li>
       <li><a href="#events">Events</a></li>
@@ -44,25 +47,31 @@
       <li><a href="#join" class="nav-cta">Join Now</a></li>
     </ul>
 
-    <div class="nav-hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+    <button
+      class="nav-hamburger"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="nav-links"
+      type="button"
+    >
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
   </nav>
 
 
   <!-- ============================================================
        HERO SECTION
   ============================================================ -->
-  <section id="hero">
+  <section id="hero" aria-label="Hero">
 
     <!-- Background glows -->
     <div class="hero-glow-1" aria-hidden="true"></div>
     <div class="hero-glow-2" aria-hidden="true"></div>
 
     <!-- Badge -->
-    <div class="hero-badge">
+    <div class="hero-badge" role="text">
       <div class="hero-badge-dot" aria-hidden="true"></div>
       Curated · Ambitious · Invite-only
     </div>
@@ -90,7 +99,7 @@
         </svg>
       </a>
       <a href="#events" class="btn-secondary">
-        See What’s Happening
+        See What's Happening
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
@@ -104,13 +113,13 @@
     </div>
 
     <!-- Marquee ticker -->
-    <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee-wrap" aria-hidden="true" role="presentation">
       <div class="marquee-track">
         <div class="marquee-item"><span></span> Skill Development</div>
         <div class="marquee-item"><span></span> Hackathon Network</div>
         <div class="marquee-item"><span></span> Internship Guidance</div>
         <div class="marquee-item"><span></span> Startup Connections</div>
-        <div class="marquee-item"><span></span> AI & Tech Learning</div>
+        <div class="marquee-item"><span></span> AI &amp; Tech Learning</div>
         <div class="marquee-item"><span></span> Creative Workshops</div>
         <div class="marquee-item"><span></span> Community Growth</div>
         <div class="marquee-item"><span></span> Peer Mentorship</div>
@@ -119,7 +128,7 @@
         <div class="marquee-item"><span></span> Hackathon Network</div>
         <div class="marquee-item"><span></span> Internship Guidance</div>
         <div class="marquee-item"><span></span> Startup Connections</div>
-        <div class="marquee-item"><span></span> AI & Tech Learning</div>
+        <div class="marquee-item"><span></span> AI &amp; Tech Learning</div>
         <div class="marquee-item"><span></span> Creative Workshops</div>
         <div class="marquee-item"><span></span> Community Growth</div>
         <div class="marquee-item"><span></span> Peer Mentorship</div>
@@ -132,7 +141,7 @@
   <!-- ============================================================
        ABOUT SECTION
   ============================================================ -->
-  <section id="about">
+  <section id="about" aria-label="About NUVIO">
     <div class="about-grid">
 
       <!-- Text Content -->
@@ -144,10 +153,10 @@
           people who refuse to wait for opportunity — they create it.
         </p>
 
-        <div class="about-pills">
+        <div class="about-pills" aria-label="Community focus areas">
           <span class="about-pill">Career Growth</span>
           <span class="about-pill">Internship Opportunities</span>
-          <span class="about-pill">Hackathons & Challenges</span>
+          <span class="about-pill">Hackathons &amp; Challenges</span>
           <span class="about-pill">Startup Connections</span>
           <span class="about-pill">Peer Collaboration</span>
           <span class="about-pill">Practical Learning</span>
@@ -164,7 +173,7 @@
       <div class="about-visual reveal" aria-hidden="true">
         <div class="about-card-big">
           <div class="about-icon-wrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="5" r="2"/>
               <circle cx="5" cy="19" r="2"/>
               <circle cx="19" cy="19" r="2"/>
@@ -179,7 +188,7 @@
 
         <div class="about-floating about-float-1">
           <span class="about-floating-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M8 21h8"/>
               <path d="M12 17v4"/>
               <path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/>
@@ -195,7 +204,7 @@
 
         <div class="about-floating about-float-2">
           <span class="about-floating-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="7" width="18" height="13" rx="2"/>
               <path d="M9 7V5a3 3 0 0 1 6 0v2"/>
             </svg>
@@ -208,7 +217,7 @@
 
         <div class="about-floating about-float-3">
           <span class="about-floating-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3z"/>
             </svg>
           </span>
@@ -226,7 +235,7 @@
   <!-- ============================================================
        WHY JOIN SECTION
   ============================================================ -->
-  <section id="why">
+  <section id="why" aria-label="Why join NUVIO">
 
     <div class="why-header reveal">
       <div class="section-label">Why NUVIO</div>
@@ -296,7 +305,7 @@
             <path d="M3 10h18"/>
           </svg>
         </span>
-        <h3>Events & Workshops</h3>
+        <h3>Events &amp; Workshops</h3>
         <p>Regular events, AMAs, panel discussions, and collaborative sessions — online and offline. Always something happening.</p>
         <div class="feature-tag">Active Community</div>
       </div>
@@ -327,7 +336,7 @@
   <!-- ============================================================
        EVENTS SECTION
   ============================================================ -->
-  <section id="events">
+  <section id="events" aria-label="Upcoming Events">
 
     <div class="events-header">
       <div class="reveal">
@@ -413,7 +422,7 @@
   <!-- ============================================================
        STATS SECTION
   ============================================================ -->
-  <section id="stats">
+  <section id="stats" aria-label="Community stats">
     <div class="stats-grid">
 
       <div class="stat-item reveal">
@@ -438,7 +447,7 @@
   <!-- ============================================================
        JOIN / CTA SECTION
   ============================================================ -->
-  <section id="join">
+  <section id="join" aria-label="Join NUVIO">
     <div class="join-glow" aria-hidden="true"></div>
 
     <div class="join-card reveal">
@@ -450,10 +459,6 @@
         as you do — and takes you further than you could alone.
       </p>
 
-      <!--
-        TODO: Replace href="#" with your Google Forms URL
-        Example: href="https://forms.gle/yourformid"
-      -->
       <a href="#" class="btn-primary" id="open-form-2">
         Apply to Join
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
@@ -467,7 +472,7 @@
 
 
   <!-- ============================================================
-       TEAM SECTION
+       TEAM / FOUNDER SECTION
   ============================================================ -->
   <section id="team" aria-label="Founder Showcase">
 
@@ -512,9 +517,10 @@
 
           <img
             src="assets/rathish.png"
-            alt="Rathish Priyadharshan"
+            alt="Rathish Priyadharshan — Founder of NUVIO"
             class="founder-photo"
             loading="lazy"
+            width="440"
           />
 
           <div class="founder-image-fade" aria-hidden="true"></div>
@@ -555,7 +561,7 @@
         </div>
 
         <div class="founder-cta reveal">
-          <a href="https://www.linkedin.com/in/rathish-priyadharshan-739681249/" class="btn-primary founder-btn-magnetic">
+          <a href="https://www.linkedin.com/in/rathish-priyadharshan-739681249/" target="_blank" rel="noopener noreferrer" class="btn-primary founder-btn-magnetic">
             Connect on LinkedIn
           </a>
 
@@ -565,22 +571,22 @@
         </div>
 
         <div class="founder-socials reveal">
-          <a href="https://www.instagram.com/rathish_artz?igsh=MTJvb2NranJjdWo5Zw==" target="_blank" rel="noopener noreferrer" class="founder-social-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <a href="https://www.instagram.com/rathish_artz?igsh=MTJvb2NranJjdWo5Zw==" target="_blank" rel="noopener noreferrer" class="founder-social-icon" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect x="3" y="3" width="18" height="18" rx="5"/>
               <circle cx="12" cy="12" r="4"/>
               <circle cx="17.5" cy="6.5" r="1"/>
             </svg>
           </a>
-          <a href="https://www.linkedin.com/in/rathish-priyadharshan-739681249/" target="_blank" rel="noopener noreferrer" class="founder-social-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <a href="https://www.linkedin.com/in/rathish-priyadharshan-739681249/" target="_blank" rel="noopener noreferrer" class="founder-social-icon" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-12h4v2"/>
               <rect x="2" y="9" width="4" height="12"/>
               <circle cx="4" cy="4" r="2"/>
             </svg>
           </a>
-          <a href="https://github.com/Rathishraja" target="_blank" rel="noopener noreferrer" class="founder-social-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <a href="https://github.com/Rathishraja" target="_blank" rel="noopener noreferrer" class="founder-social-icon" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M9 19c-5 1.5-5-2.5-7-3"/>
               <path d="M15 22v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 19 4.77 5.07 5.07 0 0 0 18.91 1S17.73.65 15 2.48a13.38 13.38 0 0 0-6 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77 5.44 5.44 0 0 0 3.5 8.52c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
             </svg>
@@ -601,31 +607,31 @@
 
       <!-- Brand -->
       <div class="footer-brand">
-        <a href="#" class="nav-logo">
-          <img src="assets/nuvio-navbar.png" alt="NUVIO" class="footer-logo">
+        <a href="#hero" class="nav-logo" aria-label="NUVIO — Back to top">
+          <img src="assets/nuvio-navbar.png" alt="NUVIO" class="footer-logo" width="100" height="32">
         </a>
         
         <p>A premium community for ambitious students, builders, and creatives. Where curious minds connect and careers begin.</p>
         <div class="footer-social">
-          <a href="https://www.instagram.com/nuvio.social" target="_blank" class="social-link" title="Instagram" aria-label="Instagram">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <a href="https://www.instagram.com/nuvio.social" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="NUVIO on Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect x="3" y="3" width="18" height="18" rx="5"/>
               <circle cx="12" cy="12" r="4"/>
               <circle cx="17.5" cy="6.5" r="1"/>
             </svg>
           </a>
-          <a href="mailto:team@nuvio.social" class="social-link" title="Email" aria-label="Email">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <a href="mailto:team@nuvio.social" class="social-link" aria-label="Email NUVIO team">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect x="3" y="5" width="18" height="14" rx="2"/>
               <path d="M3 7l9 6 9-6"/>
             </svg>
           </a>
-          <a href="https://www.linkedin.com/company/nuviosocial/" target="_blank" class="social-link" title="LinkedIn" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/company/nuviosocial/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="NUVIO on LinkedIn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M4.98 3.5A2.48 2.48 0 1 0 5 8.46 2.48 2.48 0 0 0 4.98 3.5zM3 9h4v12H3zM10 9h3.8v1.7h.1c.5-.9 1.8-1.9 3.8-1.9 4.1 0 4.8 2.7 4.8 6.2V21h-4v-5.4c0-1.3 0-3-1.9-3s-2.2 1.5-2.2 2.9V21h-4z"/>
             </svg>
           </a>
-          <a href="https://x.com/nuviosocial" target="_blank" class="social-link" title="X" aria-label="X">
+          <a href="https://x.com/nuviosocial" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="NUVIO on X (Twitter)">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M18.244 2H21l-6.56 7.5L22 22h-5.956l-4.667-6.104L6.036 22H3.28l7.017-8.019L2 2h6.104l4.219 5.53L18.244 2z"/>
             </svg>
@@ -648,8 +654,8 @@
       <div class="footer-col">
         <h4>Connect</h4>
         <ul>
-          <li><a href="https://www.instagram.com/nuvio.social" target="_blank">Instagram</a></li>
-          <li><a href="https://x.com/nuviosocial" target="_blank">X / Twitter</a></li>
+          <li><a href="https://www.instagram.com/nuvio.social" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://x.com/nuviosocial" target="_blank" rel="noopener noreferrer">X / Twitter</a></li>
           <li><a href="mailto:team@nuvio.social">Email Us</a></li>
           <li><a href="#" id="open-form-footer">Apply to Join</a></li>
         </ul>
@@ -658,29 +664,33 @@
     </div>
 
     <div class="footer-bottom">
-      <p>© 2025 NUVIO. Built with intention.</p>
+      <p>&copy; 2025 NUVIO. Built with intention.</p>
       <p>Designed for the <a href="#join">curious minds</a> of tomorrow.</p>
     </div>
   </footer>
 
-  <div class="form-modal" id="formModal">
+  <!-- ============================================================
+       FORM MODAL
+  ============================================================ -->
+  <div class="form-modal" id="formModal" role="dialog" aria-modal="true" aria-label="NUVIO Application Form">
     <div class="form-overlay" id="closeForm"></div>
 
     <div class="form-modal-content">
-      <button class="form-close" id="closeFormBtn">&times;</button>
+      <button class="form-close" id="closeFormBtn" aria-label="Close application form">&times;</button>
 
       <iframe
         src="https://tally.so/embed/ODo21Y"
         frameborder="0"
         marginheight="0"
         marginwidth="0"
-        title="NUVIO Application Form">
-      </iframe>
+        title="NUVIO Application Form"
+        loading="lazy"
+      ></iframe>
     </div>
   </div>
 
-  <!-- JavaScript — loaded at end of body for performance -->
-  <script src="main.js"></script>
+  <!-- JavaScript — deferred for performance -->
+  <script src="main.js" defer></script>
 
 </body>
 </html>
