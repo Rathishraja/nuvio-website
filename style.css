@@ -341,18 +341,48 @@ nav {
 /* Hamburger */
 .nav-hamburger {
   display: none;
-  flex-direction: column;
-  gap: 5px;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(124, 58, 237, 0.18);
+  border-radius: 14px;
+
   cursor: pointer;
-  padding: 8px 4px;
-  border-radius: 6px;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
   flex-shrink: 0;
+
+  padding: 0;
+
+  appearance: none;
+  -webkit-appearance: none;
 }
 
-.nav-hamburger span {
-  width: 22px;
+.nav-hamburger:hover {
+  background: rgba(124, 58, 237, 0.12);
+  border-color: rgba(168, 85, 247, 0.35);
+}
+
+.nav-hamburger:active {
+  transform: scale(0.96);
+}
+
+.nav-hamburger span 
+{
+  width: 20px;
   height: 2px;
   background: var(--secondary);
   border-radius: 2px;
@@ -360,6 +390,7 @@ nav {
               opacity 0.28s ease,
               background 0.2s ease;
   display: block;
+  background: white;
 }
 
 /* Hamburger → X animation */
@@ -1923,7 +1954,12 @@ footer {
   .nav-links     { display: none; }
   .nav-hamburger { display: flex; }
   nav            { padding: 0 20px; }
-
+  .nav-hamburger {
+    display: flex;
+  }
+  nav {
+    padding-top: env(safe-area-inset-top);
+  }
   /* Hero */
   #hero {
     padding-top: calc(var(--nav-height) + 40px);
