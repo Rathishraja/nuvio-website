@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/rathish",
+      "destination": "/Rathish/index.html"
+    },
+    {
+      "source": "/rathish/:path*",
+      "destination": "/Rathish/:path*"
+    }
+  ]
+}
