@@ -7,6 +7,14 @@
     {
       "source": "/rathish/:path*",
       "destination": "/Rathish/:path*"
+    },
+    {
+      "source": "/reshmitha",
+      "destination": "/reshmitha/index.html"
+    },
+    {
+      "source": "/reshmitha/:path*",
+      "destination": "/reshmitha/:path*"
     }
   ]
 }
