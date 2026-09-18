@@ -9,11 +9,11 @@
       "destination": "/Rathish/:path*"
     },
     {
-      "source": "/reshmitha",
+      "source": "/reshmithalove",
       "destination": "/Reshmitha/index.html"
     },
     {
-      "source": "/reshmitha/:path*",
+      "source": "/reshmithalove/:path*",
       "destination": "/Reshmitha/:path*"
     }
   ]
