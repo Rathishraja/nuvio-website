@@ -10,11 +10,11 @@
     },
     {
       "source": "/reshmitha",
-      "destination": "/reshmitha/index.html"
+      "destination": "/Reshmitha/index.html"
     },
     {
       "source": "/reshmitha/:path*",
-      "destination": "/reshmitha/:path*"
+      "destination": "/Reshmitha/:path*"
     }
   ]
 }
