@@ -29,7 +29,7 @@ const CONFIG = {
 
   /* ---- CHAPTER ONE: TIMELINE ---- */
   timeline: [
-    { when:"the beginning", title:"Where all Started", src:"assets/images/firstmeet.jpeg", text:"Some stories arrive loudly. Ours began quietly, then kept giving me reasons to remember it." },
+    { when:"the beginning", title:"Where all Started", src:"assets/images/firstmeet.jpeg", text:"One day, Ramya sent me a picture and said, “These are my friends,” and I said, “That girl next to you is pretty,” never knowing that girl was you.." },
     { when:"somewhere after that", title:"When we started talking", src:"", text:"A few ordinary conversations turned into the kind of small ritual you start looking forward to all day." },
     { when:"one of the good days", title:"The first moment that stuck", src:"", text:"The details were small, but the feeling stayed — easy laughter, and you being completely yourself." },
     { when:"kept forever", title:"The first photo", src:"", text:"Proof that an unplanned moment can become one of the pictures you come back to most." },
