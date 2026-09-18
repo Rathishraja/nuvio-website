@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>For Reshmitha</title>
+<meta name="description" content="A story in chapters." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Karla:wght@300;400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- ========================= COVER ========================= -->
+<section class="chapter dark" id="cover">
+  <canvas id="stars-cover"></canvas>
+  <div class="inner">
+    <p class="kicker fade-seq" data-seq="1">Written for My Prettiest Love</p>
+    <h1 class="fade-seq" data-seq="2">Reshmitha</h1>
+    <p class="sub fade-seq" data-seq="3">Some stories are meant to be remembered. Ours is the one I want to keep living, chapter after chapter, with you.</p>
+    <div class="fade-seq" data-seq="4">
+      <button class="btn" id="begin">Begin the story</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= ONE: TIMELINE ========================= -->
+<section class="chapter" id="ch1">
+  <div class="inner">
+    <p class="marker">Chapter one</p>
+    <div class="col">
+      <h2>How it started</h2>
+      <p class="lede">Nothing about it felt like a beginning at the time. That's usually how the good ones go.</p>
+      <p class="interaction-hint">Tap any chapter below to open its memory.</p>
+    </div>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<!-- ========================= TWO: GALLERY ========================= -->
+<section class="chapter dark" id="ch2">
+  <div class="inner">
+    <p class="marker">Chapter two</p>
+    <div class="col">
+      <h2>Things worth keeping</h2>
+      <p>Open any of them. One of these isn't like the others.</p>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<!-- ========================= MEMORY BOX ========================= -->
+<section class="chapter dark" id="box" style="background:var(--night-2)">
+  <div class="inner col">
+    <p class="marker">A box of small things</p>
+    <h2>Five that stayed with me</h2>
+    <p>Not the big moments. The ones nobody else would think to save.</p>
+    <div class="cards" id="cards"></div>
+  </div>
+</section>
+
+<!-- ========================= THREE: MYSTERY ========================= -->
+<section class="chapter" id="ch3">
+  <div class="inner">
+    <p class="marker">Chapter three</p>
+    <div class="col">
+      <h2>How much do you actually remember?</h2>
+      <p>Four moments, out of focus. Bring each one back.</p>
+    </div>
+    <div class="mystery" id="mystery"></div>
+  </div>
+</section>
+
+<!-- ========================= FOUR: PATHS ========================= -->
+<section class="chapter" id="ch4" style="background:var(--paper-2)">
+  <div class="inner col center" style="text-align:center">
+    <p class="marker" style="justify-content:center">Chapter four</p>
+    <h2>The part we don't talk about</h2>
+    <p class="lede">Our story wasn't one clean line. It went quiet for a while.</p>
+
+    <div class="paths" id="paths">
+      <svg viewBox="0 0 400 130" aria-hidden="true">
+        <path id="p1" d="M0,20 C90,20 120,95 200,95 C280,95 310,95 400,95" />
+        <path id="p2" d="M0,110 C90,110 120,95 200,95 C280,95 310,95 400,95" />
+        <circle cx="200" cy="95" r="4.5" />
+      </svg>
+    </div>
+
+    <p class="lede">And then it didn't stay quiet. The good things found their way back.</p>
+
+    <div style="max-width:300px; margin:clamp(28px,4vw,40px) auto 0">
+      <div class="frame" data-photo="reconnect" role="img">
+        <div class="shot"></div>
+        <div class="cap">finding our way back</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= FIVE: LITTLE THINGS ========================= -->
+<section class="chapter dark" id="ch5">
+  <div class="inner">
+    <p class="marker">Chapter five</p>
+    <div class="col">
+      <h2>Ten things about you</h2>
+      <p>Each light holds one. Touch them in any order.</p>
+    </div>
+    <div class="sky" id="sky"></div>
+  </div>
+</section>
+
+<!-- ========================= SIX: US NOW ========================= -->
+<section class="chapter" id="ch6">
+  <div class="inner col">
+    <p class="marker">Chapter six</p>
+    <h2>Where we are now</h2>
+    <div class="lines" id="lines"></div>
+  </div>
+</section>
+
+<!-- ========================= SEVEN: BIRTHDAY ========================= -->
+<section class="chapter dark" id="birthday">
+  <div class="inner">
+    <p class="marker">Chapter seven</p>
+    <div class="bday-grid">
+      <div>
+        <h1>Happy birthday,<br>Reshmitha</h1>
+        <p class="lede" style="color:rgba(247,243,236,.8)" id="bdayMsg"></p>
+      </div>
+      <div style="max-width:340px; width:100%; justify-self:center">
+        <div class="frame" data-photo="birthday" role="img">
+          <div class="shot"></div>
+          <div class="cap">the reason for today</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= LETTER ========================= -->
+<section class="chapter" id="letterSection" style="background:var(--paper-2); text-align:center">
+  <div class="inner col center">
+    <p class="marker" style="justify-content:center">Sealed until now</p>
+    <h2>I wrote you something</h2>
+    <p>It's been sitting here the whole time.</p>
+    <button class="envelope" id="envelope" aria-label="Open the letter" aria-expanded="false">
+      <div class="back"></div>
+      <div class="flap"></div>
+      <div class="seal">R</div>
+    </button>
+    <div class="letter" id="letter"></div>
+  </div>
+</section>
+
+<!-- ========================= CONSTELLATION ========================= -->
+<section class="chapter dark" id="stars" style="background:var(--night-2)">
+  <div class="inner">
+    <p class="marker">Every chapter, a light</p>
+    <div class="col">
+      <h2>You lit all of these on the way down</h2>
+      <p>Two constellations. One sky. Let each chapter wake a star until Gemini and Sagittarius meet.</p>
+      <p class="interaction-hint">Keep going — the final little star appears when every chapter is awake.</p>
+    </div>
+    <div class="constellation" id="constellation"><svg id="constLines" aria-hidden="true"></svg></div>
+  </div>
+</section>
+
+<!-- ========================= FINALE / PROPOSAL ========================= -->
+<section class="chapter dark" id="finale">
+  <div class="inner col center">
+    <p class="lede" style="color:rgba(247,243,236,.72)">That's every chapter I had written down.</p>
+    <p class="lede" style="color:rgba(247,243,236,.72)">The rest of the pages are still empty, and I only want to fill them one way.</p>
+
+    <p class="ask" id="ask">Reshmitha, will you marry me?</p>
+
+    <div class="answers">
+      <button class="btn" id="yes">Yes</button>
+      <button class="btn line" id="no">Ask me again</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= THE MOMENT ========================= -->
+<div id="yes-screen" role="dialog" aria-modal="true" aria-label="She said yes">
+  <div class="moment">
+    <div class="frame pop" data-seq="1" data-photo="us" role="img">
+      <div class="shot"></div>
+      <div class="cap" id="usCap">us</div>
+    </div>
+    <p class="said pop" data-seq="2">She said yes</p>
+    <h2 class="pop" data-seq="3">Reshmitha &amp; Rathish</h2>
+    <p class="pop" data-seq="4" id="yesLine"></p>
+    <p class="stamp pop" data-seq="5" id="stamp"></p>
+  </div>
+</div>
+<canvas id="confetti"></canvas>
+
+<!-- ========================= OVERLAYS ========================= -->
+<div class="modal" id="modal">
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="mWhen">
+    <button class="x" id="modalClose" aria-label="Close">&times;</button>
+    <div class="shot" id="mShot"></div>
+    <p class="when" id="mWhen"></p>
+    <p class="mTitle" id="mTitle"></p>
+    <p class="note" id="mNote"></p>
+  </div>
+</div>
+
+<div class="whisper" id="whisper"><p class="note" id="whisperText"></p></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<button id="sound" aria-label="Play music" disabled>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M9 18V5l10-2v13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>
+</button>
+<audio id="music" loop preload="none"></audio>
+
+<script src="assets/script.js"></script>
+
+</body>
+</html>
